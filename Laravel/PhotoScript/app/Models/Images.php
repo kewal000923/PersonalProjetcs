@@ -34,6 +34,10 @@ class Images extends Model
 		return $this->hasMany('App\Models\Like')->where('status', '0');
 	}
 
+	public function popview($id){
+		return $this->hasMany('App\Models\ImagesView')->where('images_id', $id);
+	}
+
 	public function downloads(){
 		return $this->hasMany('App\Models\Downloads');
 	}

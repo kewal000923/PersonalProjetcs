@@ -84,14 +84,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="{{ Storage::url(config('path.avatar').Auth::user()->avatar) }}" class="user-image" alt="User Image" />
+                  <img src="{{asset(config('path.avatar').Auth::user()->avatar)}}" class="user-image" alt="User Image" />
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs">{{ Auth::user()->username }}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="{{ Storage::url(config('path.avatar').Auth::user()->avatar) }}" class="img-circle" alt="User Image" />
+                    <img src="{{asset(config('path.avatar').Auth::user()->avatar)}}" class="img-circle" alt="User Image" />
                     <p>
                       <small>{{ Auth::user()->username }}</small>
                     </p>
@@ -119,10 +119,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
 
-          <!-- Sidebar user panel (optional) -->
-          <div class="user-panel">
+          <!-- Sidebar user panel (optional) {{ Storage::url(config('path.avatar').Auth::user()->avatar) }}-->
+          <div class="user-panel cm-user-panel-wrapper">
             <div class="pull-left image">
-              <img src="{{ Storage::url(config('path.avatar').Auth::user()->avatar) }}" class="img-circle" alt="User Image" />
+              <img src="{{asset(config('path.avatar').Auth::user()->avatar)}}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
               <p class="text-overflow">{{ Auth::user()->username }}</p>
@@ -142,7 +142,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li><!-- ./Links -->
 
             <!-- Links -->
-            <li class="treeview @if( Request::is('panel/admin/settings') || Request::is('panel/admin/settings/limits') ) active @endif">
+            <li class="treeview @if( Request::is('panel/admin/settings') ) active @endif">
+              <a href="{{ url('panel/admin/settings') }}"><i class="fa fa-cogs"></i> <span>{{ trans('admin.general_settings') }}</span></a>
+            </li>
+            <!-- <li class="treeview @if( Request::is('panel/admin/settings') || Request::is('panel/admin/settings/limits') ) active @endif">
             	<a href="{{ url('panel/admin/settings') }}"><i class="fa fa-cogs"></i> <span>{{ trans('admin.general_settings') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
 
            		<ul class="treeview-menu">
@@ -150,7 +153,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li @if(Request::is('panel/admin/settings/limits')) class="active" @endif><a href="{{ url('panel/admin/settings/limits') }}"><i class="fa fa-circle-o"></i> {{ trans('admin.limits') }}</a></li>
               </ul>
 
-            </li><!-- ./Links -->
+            </li>./Links -->
 
             <!-- Links -->
            <li @if(Request::is('panel/admin/theme')) class="active" @endif>
@@ -183,7 +186,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             	<a href="{{ url('panel/admin/ads') }}"><i class="fa fa-list-ul"></i> <span>{{ trans('admin.ads') }}</span></a>
             </li><!-- ./Links -->
 
-     
+
 
 
             <!-- Links -->
@@ -191,7 +194,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             	<a href="{{ url('panel/admin/pages') }}"><i class="glyphicon glyphicon-file"></i> <span>{{ trans('admin.pages') }}</span></a>
             </li><!-- ./Links -->
 
-         
+
 
 
             <!-- Links -->
