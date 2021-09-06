@@ -1,6 +1,6 @@
-a, 
+a,
 a:focus,
-a:active,  
+a:active,
 select,
 button,
 button:active,
@@ -153,4 +153,44 @@ select {
 }
 .margin-separator {
 	 margin: 0 5px;
+}
+
+.cm-dash-box p{
+      font-size: 20px !important;
+}
+.ad-cm-vm-liink {
+    color: #fff !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+.cm-dash-box h3 {
+    display: inline-block;
+    background: #fff;
+    padding: 10px !important;
+    border-radius: 5px;
+}
+.bg-green .cm-dash-box h3 {
+    color: #00a65a;
+}
+.bg-red .cm-dash-box h3 {
+    color: #dd4b39;
+}
+.bg-aqua .cm-dash-box h3 {
+    color: #00c0ef;
+}
+.cm-user-panel-wrapper p,
+.cm-user-panel-wrapper small {
+    display: inline-block;
+    margin: 0 !important;
+}
+.cm-user-panel-wrapper p {
+    margin-right: 10px !important;
+}
+.cm-user-panel-wrapper .pull-left.info {
+  padding: 0;
+right: 0;
+width: auto;
+top: 50%;
+transform: translateY(-50%);
+left: 70px;
 }

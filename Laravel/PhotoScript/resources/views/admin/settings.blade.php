@@ -132,7 +132,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('admin.link_privacy') }}</label>
                       <div class="col-sm-10">
@@ -142,7 +142,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('misc.link_license') }}</label>
                       <div class="col-sm-10">
@@ -152,7 +152,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('misc.sell_option') }}</label>
                       <div class="col-sm-10">
@@ -177,7 +177,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('misc.who_can_sell') }}</label>
                       <div class="col-sm-10">
@@ -200,7 +200,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('misc.who_can_upload') }}</label>
                       <div class="col-sm-10">
@@ -223,7 +223,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('misc.allow_free_photos') }}</label>
                       <div class="col-sm-10">
@@ -364,7 +364,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('admin.email_verification') }}</label>
                       <div class="col-sm-10">
@@ -388,7 +388,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('admin.facebook_login') }}</label>
                       <div class="col-sm-10">
@@ -412,7 +412,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('admin.twitter_login') }}</label>
                       <div class="col-sm-10">
@@ -467,7 +467,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('admin.show_watermark') }}</label>
                       <div class="col-sm-10">
@@ -490,7 +490,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <div class="box-body display-none">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">Lightbox</label>
                       <div class="col-sm-10">

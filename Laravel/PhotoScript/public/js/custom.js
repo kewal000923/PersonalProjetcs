@@ -4,7 +4,7 @@ $(document).ready(function(){
     $(".ImagePlating").click(function(){
         var imageUrl = $(this).find("img").attr("src");
         // $("#popbg").attr('src',imageUrl);
-        
+
         var image_title = $(this).find("#title").text();
         $("#image-name").text(image_title);
 
@@ -29,5 +29,72 @@ $(document).ready(function(){
         $("#tags-names").text(tags);
 
 
-    });    
+    });
+    // Slick Slider Start
+    jQuery('.cm-horizontal-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+      jQuery('.cm-vertical-slider').slick({
+          dots: false,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: true,
+          vertical:true,
+          prevArrow:'<button type="button" class="slick-prev"><i class="ion-chevron-up"></i></button>',
+          nextArrow:'<button type="button" class="slick-next"><i class="ion-chevron-down"></i></button>',
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+      jQuery('.cm-horizontal-slider, .cm-vertical-slider').removeClass('cm-display-none');
 });

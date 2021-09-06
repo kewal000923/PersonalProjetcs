@@ -51,38 +51,50 @@
         <section class="content">
 
         	<div class="row">
-
-            <div class="col-lg-3 col-xs-6">
+						<div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner cm-dash-box">
+                  <h3>{{ \App\Helper::formatNumber( $total_images ) }}</h3>
+                  <p>{{ trans_choice('misc.images_plural', $total_images) }}</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-images"></i>
+                </div>
+								<a href="{{url('panel/admin/images')}}" class="small-box-footer ad-cm-vm-liink">{{trans('misc.view_more')}} <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+						<div class="col-lg-4 col-xs-6">
+							<!-- small box -->
+							<div class="small-box bg-green">
+								<div class="inner cm-dash-box">
+									<h3>{{ \App\Helper::formatNumber( \App\Models\Ads::count() ) }}</h3>
+									<p>{{ trans('misc.ads') }}</p>
+								</div>
+								<div class="icon">
+									<i class="ion ion-social-usd"></i>
+								</div>
+								<a href="{{url('panel/admin/ads')}}" class="small-box-footer ad-cm-vm-liink">{{trans('misc.view_more')}} <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div><!-- ./col -->
+            <div class="col-lg-4 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>{{ App\Models\Purchases::count() }}</h3>
-                  <p>{{ trans('misc.purchases') }}</p>
+                <div class="inner cm-dash-box">
+                  <h3>{{ \App\Helper::formatNumber( \App\Models\Categories::count() ) }}</h3>
+                  <p>{{ trans('misc.categories') }}</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-ios-cart"></i>
+                  <i class="icon ion-grid"></i>
                 </div>
-								<a href="{{url('panel/admin/purchases')}}" class="small-box-footer">{{trans('misc.view_more')}} <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="{{url('panel/admin/categories')}}" class="small-box-footer ad-cm-vm-liink">{{trans('misc.view_more')}} <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
 
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3>{{ \App\Helper::amountFormatDecimal( App\Models\Purchases::sum('earning_net_admin') )  }} <sup style="font-size: 12px">{{$settings->currency_code}}</sup></h3>
-                  <p>{{ trans('misc.earnings') }}</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-social-usd"></i>
-                </div>
-								<span class="small-box-footer">{{trans('misc.earnings_total')}}</span>
-              </div>
-            </div><!-- ./col -->
 
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
+          <!--  <div class="col-lg-3 col-xs-6">
+
+               <div class="small-box bg-yellow">
                 <div class="inner">
                   <h3>{{ \App\Helper::formatNumber( \App\Models\User::count() ) }}</h3>
                   <p>{{ trans('misc.members') }}</p>
@@ -92,21 +104,9 @@
                 </div>
 								<a href="{{url('panel/admin/members')}}" class="small-box-footer">{{trans('misc.view_more')}} <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div><!-- ./col -->
+            </div> -->
+<!-- ./col -->
 
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-red">
-                <div class="inner">
-                  <h3>{{ \App\Helper::formatNumber( $total_images ) }}</h3>
-                  <p>{{ trans_choice('misc.images_plural', $total_images) }}</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-images"></i>
-                </div>
-								<a href="{{url('panel/admin/images')}}" class="small-box-footer">{{trans('misc.view_more')}} <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
 
           </div>
 

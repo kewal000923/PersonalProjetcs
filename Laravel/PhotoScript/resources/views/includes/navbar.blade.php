@@ -4,7 +4,7 @@ if ( Auth::check() ) {
 	// Notifications
 	$notifications_count = App\Models\Notifications::where('destination',Auth::user()->id)->where('status','0')->count();
 }
-?> 
+?>
 
 <div class="btn-block text-center class-montserrat showBanner padding-top-10 padding-bottom-10" style="display:none;">{{trans('misc.cookies_text')}} <button class="btn btn-sm btn-success" id="close-banner">{{trans('misc.go_it')}}</button></div>
 
@@ -41,15 +41,15 @@ if ( Auth::check() ) {
 						</li>
 						 @endif
 
-	
+
 							<li>
 						 <a href="{{url('/')}}" class="font-default text-uppercase">
 							 {{trans('misc.home')}}
 							 </a>
 					 </li>
-		
 
-        		
+
+
 
         		<li class="dropdown">
         			<a href="javascript:void(0);" class="font-default text-uppercase" data-toggle="dropdown">{{trans('misc.categories')}}
@@ -82,7 +82,7 @@ if ( Auth::check() ) {
 
         			<li class="dropdown">
 			          <a href="javascript:void(0);" data-toggle="dropdown" class="userAvatar myprofile dropdown-toggle font-default text-uppercase">
-			          		<img src="{{ Storage::url(config('path.avatar').$userAuth->avatar) }}" alt="User" class="img-circle avatarUser" width="21" height="21">
+			          		<img src="{{asset(config('path.avatar').Auth::user()->avatar)}}" alt="User" class="img-circle avatarUser" width="21" height="21">
 			          		<span class="title-dropdown">{{ trans('users.my_profile') }}</span>
 			          		<i class="ion-chevron-down margin-lft5"></i>
 			          	</a>
@@ -99,14 +99,14 @@ if ( Auth::check() ) {
 	          		 			<li role="separator" class="divider"></li>
 	          		 	@endif
 
-						
-											<li>
+
+											<!-- <li>
 			          		 		<a href="{{ url($userAuth->username) }}" class="myprofile text-overflow">
 			          		 			<i class="icon icon-User myicon-right"></i> {{ trans('users.my_profile') }}
 			          		 		</a>
-			          		 		</li>
+			          		 		</li> -->
 
-				
+
 
 	          		 		<li>
 	          		 			<a href="{{ url('account') }}" class="text-overflow">
@@ -145,3 +145,43 @@ if ( Auth::check() ) {
 </div><!--/.navbar-collapse -->
       </div>
     </div>
+		<div class="cm-bottom-bar">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4">
+						<div class="btn-bar-text text-center">
+							You can view <span>Newly added Images</span> <a href="#">click here</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="btn-social-liks">
+							<ul class="list-inline">
+
+						 @if( $settings->twitter != '' )
+							<li><a href="{{$settings->twitter}}" target="_blank" class="ico-social"><i class="fa fa-twitter"></i></a></li>
+							@endif
+
+						@if( $settings->facebook != '' )
+							<li><a href="{{$settings->facebook}}" target="_blank" class="ico-social"><i class="fa fa-facebook"></i></a></li>
+						@endif
+
+						@if( $settings->instagram != '' )
+							<li><a href="{{$settings->instagram}}" target="_blank" class="ico-social"><i class="fa fa-instagram"></i></a></li>
+						@endif
+
+						@if( $settings->linkedin != '' )
+							<li><a href="{{$settings->linkedin}}" target="_blank" class="ico-social"><i class="fa fa-linkedin"></i></a></li>
+							@endif
+
+						@if( $settings->youtube != '' )
+							<li><a href="{{$settings->youtube}}" target="_blank" class="ico-social"><i class="fa fa-youtube-play"></i></a></li>
+							@endif
+
+						@if( $settings->pinterest != '' )
+							<li><a href="{{$settings->pinterest}}" target="_blank" class="ico-social"><i class="fa fa-pinterest"></i></a></li>
+							@endif
+						</ul ></div>
+					</div>
+				</div>
+			</div>
+		</div>

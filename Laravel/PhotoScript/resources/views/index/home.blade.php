@@ -76,27 +76,22 @@
 	    		{{ trans('misc.no_images_published') }}
 	    	</h3>
 	  @endif
-		
-	  
+
+
 
 	  </div>
 	  <div class="col-md-3">
-		  <style>
-			  .ads-wrapper-content {
-				margin-bottom: 25px;
-			}
-		  </style>
-		  <div class="row">
-	  @foreach( $sidebarAds as $adsdata )
-			<div class="col-md-12 col-sm-6">
-				<div class="ads-wrapper-content">
-					<a href="{{{$adsdata->url}}}">
-						<img src="{{ asset('ads-image/'.$adsdata->thumbnail) }}" width="100%" height="auto" alt="{{{$adsdata->name}}}" class="img-responsive" />
-					</a>
-				</div>
-			</div>
-	  @endforeach
-	  </div>
+      <div class="cm-vertical-slider cm-display-none text-center">
+        @foreach( $sidebarAds as $adsdata )
+         <div class="cm-slider-item">
+           <div class="ads-wrapper-content">
+             <a href="{{{$adsdata->url}}}">
+               <img src="{{ asset('ads-image/'.$adsdata->thumbnail) }}" width="100%" height="auto" alt="{{{$adsdata->name}}}" class="img-responsive" />
+             </a>
+           </div>
+         </div>
+       @endforeach
+      </div>
 </pre>
 	</div><!-- row -->
 
@@ -104,16 +99,19 @@
 
 	<section class="footer-ads-section">
 		<div class="container-fluid">
+      <div class="cm-horizontal-slider cm-display-none">
+        @foreach( $footerSidebarAds as $adsdata )
+  			<div class="cm-slider-item" data-id="{{{$adsdata->id}}}">
+  				<div class="ads-wrapper-content">
+  					<a href="{{{$adsdata->url}}}">
+  						<img src="{{ asset('ads-image/'.$adsdata->thumbnail) }}" width="100%" height="auto" alt="{{{$adsdata->name}}}" class="img-responsive" />
+  					</a>
+  				</div>
+  			</div>
+  	  @endforeach
+      </div>
 			<div class="row werwer">
-			@foreach( $footerSidebarAds as $adsdata )
-			<div class="col-md-4 col-sm-6">
-				<div class="ads-wrapper-content">
-					<a href="{{{$adsdata->url}}}">
-						<img src="{{ asset('ads-image/'.$adsdata->thumbnail) }}" width="100%" height="auto" alt="{{{$adsdata->name}}}" class="img-responsive" />
-					</a>
-				</div>
-			</div>
-	  @endforeach 
+
 			</div>
 		</div>
 	</section>
@@ -192,10 +190,10 @@
 						if(datas.status == 200){
 							jQuery("#views").text(datas.totalview);
 						}
-						
+
 					},
 					error: function (data) {
-			
+
 					}
 				});
 

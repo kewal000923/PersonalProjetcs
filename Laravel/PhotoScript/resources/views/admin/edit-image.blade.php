@@ -84,7 +84,7 @@
                   </div><!-- /.box-body -->
 
                   <!-- Start Box Body -->
-                  <div class="box-body">
+                  <!-- <div class="box-body">
                     <div class="form-group">
                       <label class="col-sm-2 control-label">{{ trans('admin.description') }} ({{ trans('misc.optional') }})</label>
                       <div class="col-sm-10">
@@ -92,7 +92,8 @@
                       	<textarea name="description" rows="4" id="description" class="form-control" placeholder="{{ trans('admin.description') }}">{{ $data->description }}</textarea>
                       </div>
                     </div>
-                  </div><!-- /.box-body -->
+                  </div>-->
+                  <!-- /.box-body -->
 
                   <!-- Start Box Body -->
                   <div class="box-body">
@@ -142,20 +143,19 @@
         </div><!-- /. col-md-9 -->
 
         <div class="col-md-3">
-
-        	<div class="block-block text-center">
-        		<img src="{{Storage::url(config('path.thumbnail').$data->thumbnail)}}" class="thumbnail img-responsive">
+       	<div class="block-block text-center">
+        		<img src="{{asset('storage/'.config('path.thumbnail').$data->thumbnail)}}" class="thumbnail img-responsive">
         	</div>
 
-        	<a href="{{ url('photo',$data->id) }}" target="_blank" class="btn btn-lg btn-success btn-block margin-bottom-10">{{ trans('admin.view') }} <i class="fa fa-external-link-square"></i> </a>
+        	<!-- <a href="{{ url('photo',$data->id) }}" target="_blank" class="btn btn-lg btn-success btn-block margin-bottom-10">{{ trans('admin.view') }} <i class="fa fa-external-link-square"></i> </a> -->
 
         <ol class="list-group">
-        	<li class="list-group-item"> {{trans('misc.uploaded_by')}} <span class="pull-right color-strong">{{ $data->user()->username }}</span></li>
+      <!-- <li class="list-group-item"> {{trans('misc.uploaded_by')}} <span class="pull-right color-strong">{{ $data->user()->username }}</span></li>
 			<li class="list-group-item"> {{trans('misc.published')}} <span class="pull-right color-strong">{{ App\Helper::formatDate($data->date) }}</span></li>
-			<li class="list-group-item"> {{trans('misc.downloads')}} <strong class="pull-right color-strong">{{ App\Helper::formatNumber( $data->downloads()->count() ) }}</strong></li>
-			<li class="list-group-item"> {{trans('misc.views')}} <strong class="pull-right color-strong">{{ App\Helper::formatNumber( $data->visits()->count() ) }}</strong></li>
-			<li class="list-group-item"> {{trans('misc.likes')}} <strong class="pull-right color-strong">{{ App\Helper::formatNumber( $data->likes()->count() ) }}</strong></li>
-			<li class="list-group-item"> {{trans('misc.comments')}} <strong class="pull-right color-strong">{{ App\Helper::formatNumber( $data->comments()->count() ) }}</strong></li>
+			<li class="list-group-item"> {{trans('misc.downloads')}} <strong class="pull-right color-strong">{{ App\Helper::formatNumber( $data->downloads()->count() ) }}</strong></li> -->
+			<li class="list-group-item"> {{trans('misc.views')}} <strong class="pull-right color-strong">{{ $data->total_views }}</strong></li>
+			<li class="list-group-item"> {{trans('misc.likes')}} <strong class="pull-right color-strong">{{ $data->total_like }}</strong></li>
+			<li class="list-group-item"> {{trans('misc.unlike')}} <strong class="pull-right color-strong">{{ $data->total_dislike }}</strong></li>
 		</ol>
 
 		<div class="block-block text-center">
